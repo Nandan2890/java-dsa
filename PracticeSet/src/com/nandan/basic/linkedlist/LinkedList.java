@@ -31,6 +31,44 @@ public class LinkedList {
 		}
 	}
 	
+//	method to add element at the end of the list
+	public void append(int value) {
+		Node newNode = new Node(value);
+		
+		if(length==0) {
+			head = newNode;
+			tail = newNode;
+		}else {
+			tail.next = newNode;
+			tail = newNode;
+		}
+		
+		length++;
+	}
+	
+//	method to remove last item of the list
+	public Node removeLast() {
+		if(length == 0) return null;
+		
+		Node temp = head;
+		Node pre = head;
+		while(temp.next != null) {
+			pre = temp;
+			temp = temp.next;
+		}
+		
+		tail = pre;
+		tail.next = null;
+		length--;
+		if(length==0) {
+			head = null;
+			tail = null;
+		}
+		
+		return temp;
+	}
+	
+	
 //	method to get head
 	public void getHead() {
 		System.out.println("Head: " + head.value);
