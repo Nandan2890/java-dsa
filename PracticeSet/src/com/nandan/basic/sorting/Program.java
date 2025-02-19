@@ -5,10 +5,11 @@ import java.util.Arrays;
 public class Program {
 	public static void main(String[] args) {
 		int[] arr = {13, 46, 24, 52, 20, 9};
+//		int[] arr = {1,2,3,4,5};
 		
 //		selectionSort(arr, arr.length);
-//		bubbleSort(arr, arr.length);
-		insertionSort(arr, arr.length);
+		bubbleSort(arr, arr.length);
+//		insertionSort(arr, arr.length);
 		
 		
 		System.out.println(Arrays.toString(arr));
@@ -34,6 +35,7 @@ public class Program {
 	}
 	
 	public static void bubbleSort(int[] arr, int n) {
+		boolean isChanged = false;    //it is used to check the array is already sorted or not for sorting optimization
 //		for(int i = 0; i < n-1; i++) {
 //			for(int j = 0; j < n-i-1; j++) {
 //				if(arr[j] > arr[j+1]) {
@@ -47,7 +49,13 @@ public class Program {
 			for(int j=0; j<=i-1; j++) {
 				if(arr[j] > arr[j+1]) {
 					swap(arr, j, j+1);
+					isChanged = true;
 				}
+//				System.out.println("run inner loop");
+			}
+//			System.out.println("Run outer loop");
+			if(!isChanged) {
+				break;
 			}
 		}
 	}
