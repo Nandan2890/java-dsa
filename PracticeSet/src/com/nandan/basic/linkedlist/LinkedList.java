@@ -15,10 +15,34 @@ public class LinkedList {
 	
 	class Node{
 		int value;
-		Node node;
+		Node next;
 		
 		public Node(int value) {
 			this.value = value;
 		}
+	}
+	
+//	printList: print all the nodes of the linkedList
+	public void printList() {
+		Node temp = head;
+		while(temp != null) {
+			System.out.println(temp.value);
+			temp = temp.next;
+		}
+	}
+	
+//	method to get head
+	public void getHead() {
+		System.out.println("Head: " + head.value);
+	}
+	
+//	method to get tail
+	public void getTail() {
+		System.out.println("Tail: " + tail.value);
+	}
+	
+//	method to get length of the list
+	public void getLength() {
+		System.out.println("Length: " + length);
 	}
 }

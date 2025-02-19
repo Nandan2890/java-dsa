@@ -2,6 +2,12 @@ package com.nandan.basic.linkedlist;
 
 public class Main {
 	public static void main(String[] args) {
-		LinkedList ll = new LinkedList(1);
+		LinkedList myLinkedList = new LinkedList(4);
+		
+		myLinkedList.getHead();
+		myLinkedList.getTail();
+		myLinkedList.getLength();
+		
+		myLinkedList.printList();
 	}
 }
