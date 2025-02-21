@@ -198,4 +198,49 @@ public class LinkedList {
 	public void getLength() {
 		System.out.println("Length: " + length);
 	}
+	
+	
+//	*******************************************************
+	//find middle node of the linked list
+	public Node findMiddleNode() {
+//		if the length variable is given;
+//		if(length == 0) {
+//			return null;
+//		}
+//		Node temp = head;
+//		int mid = length/2;
+//		for(int i = 0; i < mid; i++) {
+//			temp = temp.next;
+//		}
+//		
+//		return temp;
+		
+//		if the length variable is not given
+//		using floyd's tortoise and hare algorithm(The concept of fast and slow pointer)
+		Node fastPtr = head;
+		Node slowPtr = head;
+		
+		while(fastPtr != null && fastPtr.next != null) {
+			slowPtr = slowPtr.next;
+			fastPtr = fastPtr.next.next;
+		}
+		
+		return slowPtr;
+	}
+	
+	public boolean hasLoop() {
+		Node fastPtr = head;
+		Node slowPtr = head;
+		while(fastPtr != null && fastPtr.next != null) {
+			slowPtr = slowPtr.next;
+			fastPtr = fastPtr.next.next;
+			
+			if(slowPtr == fastPtr) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 }
