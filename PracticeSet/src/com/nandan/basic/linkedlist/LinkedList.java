@@ -243,4 +243,39 @@ public class LinkedList {
 		return false;
 	}
 	
+	
+//	find kth node from the end of the linked list 
+	public Node findkthNode(int k) {
+		Node main_ptr = head;
+        Node ref_ptr = head;
+        
+        int count=0;
+        if(head != null){
+            while(count < k){
+                
+                if(ref_ptr == null){
+                    return null;
+                }
+                
+                ref_ptr = ref_ptr.next;
+                count++;
+            }
+            
+            if(ref_ptr == null){
+                if(head != null){
+                    return head;
+                }
+            }
+            else{
+                while(ref_ptr != null){
+                    main_ptr = main_ptr.next;
+                    ref_ptr = ref_ptr.next;
+                }
+                return main_ptr;
+            }
+        }
+        
+        return null;
+	}
+	
 }
