@@ -2,13 +2,13 @@ package com.nandan.basic.linkedlist;
 
 public class Main {
 	public static void main(String[] args) {
-		LinkedList myLinkedList = new LinkedList(1);
+		LinkedList myLinkedList = new LinkedList(3);
 		
-		myLinkedList.append(2);
-		myLinkedList.append(3);
-		myLinkedList.append(4);
+		myLinkedList.append(8);
 		myLinkedList.append(5);
-		myLinkedList.append(6);
+		myLinkedList.append(10);
+		myLinkedList.append(2);
+		myLinkedList.append(1);
 		myLinkedList.append(7);
 		
 //		Node node = myLinkedList.removeLast();
@@ -24,6 +24,9 @@ public class Main {
 		System.out.println("********************************");
 //		System.out.println(myLinkedList.findMiddleNode().value);
 //		System.out.println(myLinkedList.hasLoop());
-		System.out.println(myLinkedList.findkthNode(8).value);
+//		System.out.println(myLinkedList.findkthNode(2).value);
+		myLinkedList.partitionList(8);
+		myLinkedList.printList();
+		
 	}
 }
