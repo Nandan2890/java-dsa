@@ -23,6 +23,7 @@ public class Main {
 		myLinkedList.printList();
 		System.out.println("********************************");
 //		System.out.println(myLinkedList.findMiddleNode().value);
-		System.out.println(myLinkedList.hasLoop());
+//		System.out.println(myLinkedList.hasLoop());
+		System.out.println(myLinkedList.findkthNode(8).value);
 	}
 }
