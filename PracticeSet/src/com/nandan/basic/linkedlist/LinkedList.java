@@ -1,5 +1,8 @@
 package com.nandan.basic.linkedlist;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList {
 	private Node head;
 	private Node tail;
@@ -308,6 +311,44 @@ public class LinkedList {
 		head = dummy1.next;
 		prev1.next = dummy2.next;
 		
+	}
+	
+//	remove duplicates using set collection in which the set have the property to eliminate the value that are already exist in their collection i.e they will not store the duplicates data or values
+	public void removeDuplicates() {
+		Set<Integer> values = new HashSet<>();
+		
+		Node current = head;
+		Node prev = null;
+		
+		while(current != null) {
+			if(values.contains(current.value)) {
+				prev.next = current.next;
+				length--;
+			}else {
+				values.add(current.value);
+				prev = current;
+			}
+			
+			current = current.next;
+		}
+	}
+	
+	public void removeDuplicates2() {
+		Node current = head;
+		
+		while(current != null) {
+			Node runner = current;
+			while(runner.next != null) {
+				if(runner.next.value == current.value) {
+					runner.next = runner.next.next;
+					length -= 1;
+				}else {
+					runner = runner.next;
+				}
+			}
+			
+			current = current.next;
+		}
 	}
 	
 }
